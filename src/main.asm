@@ -31,7 +31,8 @@ main_loop:
 vdp_setup:
         ld      a,#0x04
         out     (#0xbf),a
-        ld      a,#0x80
+        ; Bit 6 enables the visible display.  Without it the VDP renders black.
+        ld      a,#0x40
         out     (#0xbf),a
         ld      a,#0x80
         out     (#0xbf),a
